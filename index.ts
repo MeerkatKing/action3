@@ -1,3 +1,3 @@
 function main() {
-console.log("haha");
+console.log("haha1");
 }
