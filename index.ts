@@ -1,3 +1,3 @@
 function main() {
-console.log("asdf2");
+console.log("haha");
 }
