@@ -1,3 +1,3 @@
 function main() {
-console.log("asdf");
+console.log("asdf1");
 }
