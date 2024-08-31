@@ -13,4 +13,4 @@ jobs:
         id: set-repo-list
         run: |
           echo '["action1", "action2"]' > json_output.txt
-          echo "repo_list=$(cat json_output.txt)" >> $GITHUB_OUTPUT
+          echo "repo-list=$(cat json_output.txt)" >> $GITHUB_OUTPUT
