@@ -14,7 +14,7 @@ on:
 
 jobs:
   call-common-config:
-    uses: MeerkatKing/action3/.github/workflows/repos.yml@main
+    uses: MeerkatKing/action3/.github/workflows/common-config.yml@main
     
   tag_release_branch:
     needs: call-common-config
