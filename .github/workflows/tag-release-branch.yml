@@ -23,7 +23,7 @@ jobs:
 
     strategy:
       matrix:
-        repo: ${{ fromJson('[]') }}
+        repo: ${{ fromJson('["action4"]') }}
 
     steps:
       - name: Checkout this repository
