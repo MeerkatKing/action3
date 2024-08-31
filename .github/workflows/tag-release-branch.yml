@@ -37,7 +37,7 @@ jobs:
           #!/bin/bash
 
           # 仓库列表
-          repos=("action1" "action2") # 替换为你的仓库名称
+          repos=(${{ vars.REPO_LIST }})
 
           # Release 分支名称
           release_branch="${{ github.event.inputs.release_branch }}"
