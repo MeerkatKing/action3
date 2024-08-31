@@ -1,7 +1,7 @@
 name: Common Config
 
 on:
-  workflow_call:
+  [workflow_call, workflow_dispatch]
 
 env:
   REPOS: "'[\"action1\", \"action2\"]'"
@@ -10,4 +10,4 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
-      repo-list: ["action1", "action2"]
+      repo-list: '["action1", "action2"]'
