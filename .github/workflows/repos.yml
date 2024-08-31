@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 env:
-  REPOS: '"[\"action1\", \"action2\"]"'
+  REPOS: '["action1", "action2"]'
 
 jobs:
   prepare:
