@@ -3,6 +3,9 @@ name: Common Config
 on:
   workflow_call:
 
+env:
+  REPOS: "\"[\"action1\", \"action2\"]\""
+
 jobs:
   prepare:
     runs-on: ubuntu-latest
@@ -12,4 +15,4 @@ jobs:
       - name: Set repository list
         id: set-repo-list
         run: |
-          echo "repo-list=[\"action1\", \"action2\"]" >> "${{GITHUB_OUTPUT}}"
+          echo "repo-list=${{env.REPOS}}" >> "${{GITHUB_OUTPUT}}"
