@@ -45,14 +45,11 @@ jobs:
         run: |
           #!/bin/bash
 
-          # 仓库列表
-          repos=(${{ vars.REPO_LIST }})
-
           # Release 分支名称
           release_branch="${{ github.event.inputs.release_branch }}"
           tag="${{ github.event.inputs.tag }}"
 
-          echo "Processing $repo..."
+          echo "Processing ${{ matrix.repo }}..."
 
           # 克隆仓库
           git clone https://$GH_PAT@github.com/MeerkatKing/${{ matrix.repo }}.git
