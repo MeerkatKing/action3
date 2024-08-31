@@ -12,4 +12,4 @@ jobs:
       - name: Set repository list
         id: set-repo-list
         run: |
-          echo "repo-list=$(echo '["action1", "action2"]' | jq -R . | jq -s .)" >> "${{GITHUB_OUTPUT}}"
+          echo "repo-list=[\"action1\", \"action2\"]" >> "${{GITHUB_OUTPUT}}"
