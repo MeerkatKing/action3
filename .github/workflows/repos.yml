@@ -7,7 +7,7 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
-      repo-list: “haha"
+      repo-list: ${{ steps.set-repo-list.outputs.repo-list }}
     steps:
       - name: Set repository list
         id: set-repo-list
