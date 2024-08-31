@@ -23,7 +23,7 @@ jobs:
 
     strategy:
       matrix:
-        repo: ${{ fromJson(needs.call-common-config.outputs.repo-list) }}
+        repo: ${{ fromJson('["action1"]') }}
 
     steps:
       - name: Checkout this repository
@@ -31,6 +31,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          echo "repo-list"
+          echo ${{needs.call-common-config.outputs.repo-list}}
           sudo apt-get update
           sudo apt-get install -y git
 
