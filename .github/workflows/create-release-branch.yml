@@ -32,6 +32,9 @@ jobs:
         run: |
           #!/bin/bash
 
+          echo "GH_PATH
+          echo $GH_PAT
+
           # 仓库列表
           repos=("action1" "action2") # 替换为你的仓库名称
 
