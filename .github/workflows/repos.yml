@@ -15,4 +15,4 @@ jobs:
       - name: Set repository list
         id: set-repo-list
         run: |
-          echo "repo-list=${{REPOS}}" >> "$GITHUB_OUTPUT"
+          echo "repo-list=${{env.REPOS}}" >> "$GITHUB_OUTPUT"
