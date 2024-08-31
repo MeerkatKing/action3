@@ -23,7 +23,7 @@ jobs:
 
     strategy:
       matrix:
-        repo: ["action1", "action2"]
+        repo: ${{ needs.call-common-config.outputs.repo-list }}
 
     steps:
       - name: Checkout this repository
