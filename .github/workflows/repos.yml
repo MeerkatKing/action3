@@ -10,4 +10,4 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
-      repo-list: '["action1", "action2"]'
+      repo-list: ["action1", "action2"]
