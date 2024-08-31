@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release_branch:
-        description: 'Release branch name (e.g., release/v1.0.0)'
+        description: 'Release branch name (e.g., release/v1.0)'
         required: true
         type: string
       tag:
