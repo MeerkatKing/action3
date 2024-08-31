@@ -2,6 +2,11 @@ name: Common Config
 
 on:
   workflow_call:
+  # Map the workflow outputs to job outputs
+    outputs:
+      repo-list:
+        description: "The repo list"
+        value: ${{ jobs.prepare.outputs.repo-list }}
 
 jobs:
   prepare:
