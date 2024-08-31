@@ -23,7 +23,7 @@ jobs:
 
     strategy:
       matrix:
-        repo: ${{ fromJson(needs.call-common-config.outputs.repo-list) }}
+        repo: ${{ fromJSON(needs.call-common-config.outputs.repo-list) }}
 
     steps:
       - name: Checkout this repository
