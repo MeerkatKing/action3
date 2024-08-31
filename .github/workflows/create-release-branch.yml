@@ -42,7 +42,7 @@ jobs:
             echo "Processing $repo..."
 
             # 克隆仓库
-            git clone https://$GH_PAT@github.com/your-org/$repo.git
+            git clone https://$GH_PAT@github.com/MeerkatKing/$repo.git
             cd $repo
 
             # 切换到 main 分支并拉取最新更改
