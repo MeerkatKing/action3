@@ -1,0 +1,15 @@
+name: Common Config
+
+on:
+  workflow_call:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      repo-list: ${{ steps.set-repo-list.outputs.repo-list }}
+    steps:
+      - name: Set repository list
+        id: set-repo-list
+        run: |
+          echo "::set-output name=repo-list::$(echo '["action1", "action2"]' | jq -R . | jq -s .)"
