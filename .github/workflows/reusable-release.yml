@@ -10,8 +10,8 @@ on:
         type: string
       prerelease:
         description: 'Is this a prerelease?'
-        required: false
-        default: 'false
+        required: true
+        type: boolean
 
 jobs:
   release:
