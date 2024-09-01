@@ -1,0 +1,22 @@
+# 管理仓库中的工作流 .github/workflows/manage_release.yml
+name: Manage Releases
+
+on:
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  trigger_sub_repos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Release in Sub-Repositories
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/MeerkatKing/action2/actions/workflows/on-pr.yml/dispatches
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          inputs: |
+            {
+              "tag_name": "v2.0.0",
+              "release_notes": "统一管理的发布版本"
+            }
