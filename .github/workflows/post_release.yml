@@ -6,6 +6,11 @@ on:
 
 jobs:
   trigger_sub_repos:
+    permissions:
+      contents: write
+      issues: read
+      pull-requests: writ
+      
     runs-on: ubuntu-latest
 
     steps:
