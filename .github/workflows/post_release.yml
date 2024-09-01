@@ -17,8 +17,7 @@ jobs:
           ref: main
           inputs: |
             {
-              "tag_name": "v2.0.0",
-              "release_notes": "统一管理的发布版本"
+              "tag_name": "v2.0.0"
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
