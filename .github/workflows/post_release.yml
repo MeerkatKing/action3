@@ -15,3 +15,5 @@ jobs:
           route: POST /repos/MeerkatKing/action2/actions/workflows/on-pr.yml/dispatches
           mediaType: '{"format": "json"}'
           request: '{"ref": "main", "inputs": {"tag_name": "v1.0.2", "release_notes": "统一管理的发布版本"}}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
