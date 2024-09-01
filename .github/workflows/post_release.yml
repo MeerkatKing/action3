@@ -14,7 +14,6 @@ jobs:
         uses: octokit/request-action@v2.x
         with:
           route: POST /repos/MeerkatKing/action2/actions/workflows/on-pr.yml/dispatches
-          token: ${{ secrets.GH_PAT }}
           ref: main
           inputs: |
             {
