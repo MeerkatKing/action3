@@ -18,7 +18,12 @@ jobs:
         uses: octokit/request-action@v2.x
         with:
           route: POST /repos/MeerkatKing/action2/actions/workflows/on-pr.yml/dispatches
-          mediaType: '{"format": "json"}'
-          request: '{"ref": "main", "inputs": {"tag_name": "v1.0.2", "release_notes": "统一管理的发布版本"}}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          inputs: |
+            {
+              "tag_name": "v2.0.0",
+              "release_notes": "统一管理的发布版本"
+            }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
