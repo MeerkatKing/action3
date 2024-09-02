@@ -1,9 +1,7 @@
 name: Auto PR from Release to Main
 
 on:
-  push:
-    branches:
-      - release/**   # 监听所有 release 分支的推送事件
+  workflow_call:
 
 jobs:
   create-pr:
