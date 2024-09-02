@@ -14,7 +14,15 @@ on:
         default: false
 
 jobs:
+  call-common-config:
+    uses: MeerkatKing/action3/.github/workflows/common-config.yml@main
+    
   trigger_sub_repos:
+    needs: call-common-config
+    
+    strategy:
+      matrix:
+        repo: ${{ fromJson(needs.call-common-config.outputs.repo-list) }}
       
     runs-on: ubuntu-latest
 
@@ -22,7 +30,7 @@ jobs:
       - name: Trigger Release in Sub-Repositories
         uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/MeerkatKing/action2/actions/workflows/on-pr.yml/dispatches
+          route: POST /repos/MeerkatKing/${{matrix.repo}}/actions/workflows/on-pr.yml/dispatches
           ref: main
           inputs: |
             {
