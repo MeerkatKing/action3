@@ -13,6 +13,11 @@ jobs:
       with:
         ref: ${{ github.ref }}   # 当前推送的 release 分支
 
+    - name: Set up Git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Create Pull Request
       uses: repo-sync/pull-request@v2
       with:
