@@ -18,6 +18,10 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+    - name: Mock Pull Request
+      run: echo "Simulating pull request creation instead of actual request"
+      if: env.ACT == 'true'
+
     - name: Create Pull Request
       uses: repo-sync/pull-request@v2
       with:
@@ -27,7 +31,3 @@ jobs:
         pr_body: 'This PR updates the main branch with the latest changes from ${{ github.ref_name }}.'
         github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用默认的 GitHub Token
       if: env.ACT != 'true'
-
-    - name: Mock Pull Request
-      run: echo "Simulating pull request creation instead of actual request"
-      if: env.ACT == 'true'
